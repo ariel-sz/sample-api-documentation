@@ -1,11 +1,11 @@
 ---
-title: API Reference
+title: Go Rest API
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
+  - java
   - javascript
+  - python
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -20,39 +20,21 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Kittn API
+    content: Documentation for the Go Rest API
 ---
 
-# Introduction
+# Go Rest API
 
-This is Ariel's API documentation.
+The [Go Rest API](https://gorest.co.in/) is a functional REST API that provides you with dummy data. You can use Go Rest API to prototype and test an application, or to learn how to interact with APIs (for example, using [Postman](https://www.postman.com/).
 
 # Authentication
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here" \
   -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
 ```
 
 > Make sure to replace `meowmeowmeow` with your API key.
@@ -67,9 +49,26 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# Resources
 
-## Get All Kittens
+Go Rest API enables you retrieve and manage the following resources:
+
+- [Users](#users)
+- [Posts](#posts)
+- [Comments](#comments)
+- [To-dos](#to-dos)
+
+## Users
+
+The users resource contains fake personal information associated to different user identifiers.
+
+### Endpoints
+
+- `GET /users`: Retrieves all users and their personal information.
+- `GET /users/{user_id}/posts`: Retrieves all posts created by a single user.
+
+
+### Get All Kittens
 
 ```ruby
 require 'kittn'
@@ -88,13 +87,6 @@ api.kittens.get()
 ```shell
 curl "http://example.com/api/kittens" \
   -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
 ```
 
 > The above command returns JSON structured like this:
