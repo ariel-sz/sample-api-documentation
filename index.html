@@ -374,16 +374,18 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <p>Go Rest API enables you retrieve and manage the following resources:</p>
 
 <ul>
-<li><a href="#Users">Users</a></li>
-<li><a href="#Posts">Posts</a></li>
-<li><a href="#Comments">Comments</a></li>
-<li><a href="#To-dos">To-dos</a></li>
+<li><a href="#users">Users</a></li>
+<li><a href="#posts">Posts</a></li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#to-dos">To-dos</a></li>
 </ul>
 <h2 id='users'>Users</h2>
 <p>The users resource contains fake personal information associated to different user identifiers.</p>
 <h3 id='endpoints'>Endpoints</h3>
-<p><code>GET /users</code>: Retrieves all users and their personal information.
-<code>GET /users/{user_id}/posts</code>: Retrieves all posts created by a single user.</p>
+<ul>
+<li><code>GET /users</code>: Retrieves all users and their personal information.</li>
+<li><code>GET /users/{user_id}/posts</code>: Retrieves all posts created by a single user.</li>
+</ul>
 <h3 id='get-all-kittens'>Get All Kittens</h3><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
